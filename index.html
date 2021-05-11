@@ -648,15 +648,12 @@
             message: 'Here are the details of registration for lead:',
             ...params
           };
-
-          console.log('params', params)
           window.emailjs.send(cred.serviceId, cred.templateId, templateParams)
             .then(res => {
               console.log('Email successfully sent!')
               document.getElementById("reg-form").reset();
-              alert('Success')
+              window.location.href = "/thanks.html";
             })
-            // Handle errors here however you like, or use a React error boundary
             .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err)
           )
         }
